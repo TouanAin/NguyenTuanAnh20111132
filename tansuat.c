@@ -7,7 +7,7 @@ typedef struct
 {
   char name[81];
   int dem;
-  char dong[30];
+  char dong[1000];
 }data;
 
 
