@@ -135,7 +135,7 @@ treetype dem(FILE *f,char name[],treetype root,treetype stopw)
 			chuanhoa(el.name);
 			strcpy(el.dong,",");
 			char*tmp=itostr(dong);
-			printf("%d,%s\n",dong,tmp);
+			
  			strcpy(&el.dong[1],tmp);
 			if(strcmp(el.name,"\0")!=0&&(Search(el.name,stopw)==NULL))InsertNode(el,&root);
     }}}
