@@ -162,7 +162,11 @@ int main()
   	treetype root=NULL;
   	treetype stopw=NULL;
   	stopw=tucam(stopw);
-  	root=dem(f,"vanban.txt",root,stopw);
+  	char name[20];
+	printf("Nhap ten file: ");
+	scanf("%s",name);
+  	stopw=tucam(stopw);
+  	root=dem(f,name,root,stopw);
 	printftree(root);
   	freetree(root);
   	freetree(stopw);
