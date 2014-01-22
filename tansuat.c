@@ -102,6 +102,14 @@ treetype tucam(treetype root){
 	fclose(f);
 	return root;
 }
+
+char* itostr(int num){
+  char buf[5];  
+  sprintf(buf,"%d",num);
+  char * buff=(char*)malloc((strlen(buf)+1)*sizeof(char));
+  strcpy(buff,buf);
+  return buff;
+}
 treetype dem(FILE *f,char name[],treetype root,treetype stopw)
 {
   elementtype el;
@@ -115,7 +123,8 @@ treetype dem(FILE *f,char name[],treetype root,treetype stopw)
       exit(1);}
   while(fgets(s,255,f)!=NULL)
     {	
-    	dong++;
+
+        dong++;
     	int size=parse(s,part);
     	for(i=0;i<size;i++){
       	el.dem=1;if(i>0)strcpy(temp,part[i-1]);
@@ -125,16 +134,14 @@ treetype dem(FILE *f,char name[],treetype root,treetype stopw)
   		
 			chuanhoa(el.name);
 			strcpy(el.dong,",");
- 			
- 			itoa(dong,temp,10);
- 		
- 			strcpy(&el.dong[1],temp);
+			char*tmp=itostr(dong);
+			printf("%d,%s\n",dong,tmp);
+ 			strcpy(&el.dong[1],tmp);
 			if(strcmp(el.name,"\0")!=0&&(Search(el.name,stopw)==NULL))InsertNode(el,&root);
     }}}
   fclose(f);
 	return root;
 }
-
 
 int parse(char*buff,char *part[])
 {
