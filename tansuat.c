@@ -7,7 +7,7 @@ typedef struct
 {
   char name[81];
   int dem;
-  char dong[100000];
+  char dong[20000];
 }data;
 
 
@@ -104,7 +104,7 @@ treetype tucam(treetype root){
 }
 
 char* itostr(int num){
-  char buf[5];  
+  char buf[10];  
   sprintf(buf,"%d",num);
   char * buff=(char*)malloc((strlen(buf)+1)*sizeof(char));
   strcpy(buff,buf);
