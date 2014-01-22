@@ -7,7 +7,7 @@ typedef struct
 {
   char name[81];
   int dem;
-  char dong[1000];
+  char dong[100000];
 }data;
 
 
@@ -115,7 +115,7 @@ treetype dem(FILE *f,char name[],treetype root,treetype stopw)
   elementtype el;
   char s[255];
   char temp[81];
-  char *part[30];
+  char *part[100];
   int i;
   int dong=0;
   if((f=fopen(name,"r"))==NULL)
